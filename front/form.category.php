@@ -67,12 +67,6 @@ if (PluginGestaohorasBalance_Hour::canView()) {
 
                   var response = JSON.parse(response);
                                
-                    
-                    if( response.limitefield == true && $("input[name=limitefield]").is(":checked") == false ){
-                        $("input[name=limitefield]").click();
-                    }else if (response.limitefield == false && $("input[name=limitefield]").is(":checked") == true){
-                        $("input[name=limitefield]").click();
-                    }
 
                     if( response.debitofield == true && $("input[name=debitofield]").is(":checked") == false ){
                         $("input[name=debitofield]").click();
@@ -84,11 +78,6 @@ if (PluginGestaohorasBalance_Hour::canView()) {
      } ');
     echo "</td>";
     echo "<td class='top' width='5%'>";
-
-    echo "<label style='margin-left:20px'> Limite </label>";
-    echo Html::getCheckbox([$p, 'name' => 'limitefield']);
-
-    echo "<p>";
 
     echo "<label style='margin-left:20px'> Debito </label>";
     echo Html::getCheckbox([$p, 'name' => 'debitofield']);
@@ -109,7 +98,7 @@ if (PluginGestaohorasBalance_Hour::canView()) {
     echo "</table>";
     echo "</form>";
 
-    echo '<table border="0" class="tab_cadrehov"><thead><tr class="tab_bg_2"><th class="">Categoria</th><th class="">Limite</th><th class="">Débito</th></tr></thead><tbody>';
+    echo '<table border="0" class="tab_cadrehov"><thead><tr class="tab_bg_2"><th class="">Categoria</th><th class="">Débito</th></tr></thead><tbody>';
 
     PluginGestaohorasCategory::showTable();
     echo '</tbody></table>';

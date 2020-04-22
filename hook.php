@@ -11,7 +11,6 @@ function display_resume()
 
       if ($saldoHoras) {
          echo "<p><b>Saldo de horas: {$saldoHoras['total']}h</b></p>";
-         echo "<p><b>Limite diário: {$saldoHoras['limite']}</b></p>";
       }
    }
 }

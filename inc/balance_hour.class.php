@@ -104,15 +104,6 @@ class PluginGestaohorasBalance_Hour extends CommonDBTM
          'massiveaction' => false
       ];
 
-      $tab[] = [
-         'id' => '3',
-         'table' => $this->getTable(),
-         'field' => 'daily',
-         'name' => __('Limite Diário'),
-         'datatype' => 'itemlink',
-         'massiveaction' => false
-      ];
-
       return $tab;
    }
 
@@ -142,11 +133,6 @@ class PluginGestaohorasBalance_Hour extends CommonDBTM
       echo '<tr class="tab_bg_2">';
       echo '<td width="20%">Saldo Padrão <span class="red">*</span></td>';
       echo '<td width="80%"><input type="text" name="default" value="' . $this->fields["default"] . '" size="35"/></td>';
-      echo '</tr>';
-
-      echo '<tr class="tab_bg_1">';
-      echo '<td width="20%">Limite Diário <span class="red">*</span></td>';
-      echo '<td width="80%"><input type="text" name="daily" value="' . $this->fields["daily"] . '" size="35"/></td>';
       echo '</tr>';
 
       if ($ID) {
@@ -240,27 +226,6 @@ class PluginGestaohorasBalance_Hour extends CommonDBTM
 
 
    /**
-    * @param $groupId
-    * @return mixed
-    */
-   protected function getTotalTicketsByGroupIdPerDate($groupId)
-   {
-      global $DB;
-
-      $dt_init = date('Y-m-d');
-
-      $historys = $DB->query("SELECT COUNT(t.id) AS total FROM glpi_tickets t
-                                    INNER JOIN glpi_users u ON t.users_id_recipient = u.id
-                                    INNER JOIN glpi_groups_users g ON u.id = g.users_id AND g.groups_id = {$groupId}
-				    INNER JOIN glpi_plugin_gestaohoras_itilcategorycategorias fic on fic.items_id = t.itilcategories_id
-                                    WHERE t.date_creation between '{$dt_init} 00:00:00' AND NOW() AND fic.limitefield=1");
-
-      $result = $historys->fetch_array();
-
-      return $result['total'];
-   }
-
-   /**
     * get Cron description parameter for this class
     *
     * @param $name string name of the task
@@ -305,7 +270,7 @@ class PluginGestaohorasBalance_Hour extends CommonDBTM
                      AND t.is_deleted=0 
                      AND tt.actiontime > 0
 				AND t.date_creation between '{$data}' AND NOW()
-	         GROUP BY t.id
+	         GROUP BY t.id, b_hr.groups_id, b_hr.id
          
               UNION
          
@@ -413,12 +378,9 @@ class PluginGestaohorasBalance_Hour extends CommonDBTM
 
       // Limite Restante
       $self = new PluginGestaohorasBalance_Hour();
-      $limite = $self->getTotalTicketsByGroupIdPerDate($balance['groups_id']);
-      $limiteTotal = $balance['daily'] - $limite;
 
       return [
-         'total' => $balance['total'],
-         'limite' => $limiteTotal
+         'total' => $balance['total']
       ];
    }
 

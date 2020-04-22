@@ -36,10 +36,8 @@ CREATE TABLE IF NOT EXISTS `glpi_plugin_gestaohoras_itilcategorycategorias` (
     `id` int(11) UNSIGNED  NOT NULL AUTO_INCREMENT,
     `items_id` int(11) NOT NULL,
     `itemtype` varchar(255) DEFAULT 'ITILCategory',
-    `limitefield` int(11) UNSIGNED  NOT NULL DEFAULT 0,
     `debitofield` int(11) UNSIGNED  NOT NULL DEFAULT 0,
- PRIMARY KEY (`id`),
-  FOREIGN KEY (`items_id`) REFERENCES glpi_itilcategories(`id`)
+ PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 
@@ -47,5 +45,5 @@ CREATE TABLE IF NOT EXISTS `glpi_plugin_gestaohoras_itilcategorycategorias` (
 INSERT INTO glpi_plugin_gestaohoras_itilcategorycategorias (
 	items_id, 
 	itemtype, 
-	limitefield, debitofield
-) SELECT id, 'ITILCategory', 0, 0 FROM glpi_itilcategories;
+	debitofield
+) SELECT id, 'ITILCategory', 0 FROM glpi_itilcategories;

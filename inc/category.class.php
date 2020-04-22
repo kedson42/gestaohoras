@@ -13,7 +13,6 @@ class PluginGestaohorasCategory extends CommonDBTM
     {
         global $DB;
 
-        $limite = isset($array['limitefield']) ? 1 : 0;
         $debito = isset($array['debitofield']) ? 1 : 0;
 
 
@@ -22,7 +21,6 @@ class PluginGestaohorasCategory extends CommonDBTM
             $DB->update(
                 'glpi_plugin_gestaohoras_itilcategorycategorias',
                 [
-                    'limitefield' => $limite,
                     'debitofield' => $debito
                 ],
                 ['items_id' => $array['categoria_id']]
@@ -31,7 +29,6 @@ class PluginGestaohorasCategory extends CommonDBTM
             $DB->insert(
                 'glpi_plugin_gestaohoras_itilcategorycategorias',
                 [
-                    'limitefield' => $limite,
                     'debitofield' => $debito,
                     'items_id' => $array['categoria_id']
                 ]
@@ -72,14 +69,6 @@ class PluginGestaohorasCategory extends CommonDBTM
             echo '</td>';
 
             echo '<td valign="top">';
-            if ($val['limitefield']) {
-                echo 'Ativo';
-            } else {
-                echo 'Inativo';
-            }
-            echo '</td>';
-
-            echo '<td valign="top">';
             if ($val['debitofield']) {
                 echo 'Ativo';
             } else {
@@ -96,7 +85,7 @@ class PluginGestaohorasCategory extends CommonDBTM
         global $DB;
 
         $iterator = $DB->request([
-            'SELECT' => ['limitefield', 'debitofield'],
+            'SELECT' => ['debitofield'],
             'FROM'   => 'glpi_plugin_gestaohoras_itilcategorycategorias',
             'WHERE'  => ['items_id' => $id]
         ]);
