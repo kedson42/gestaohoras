@@ -1,0 +1,46 @@
+         <root>
+            <name>Gestão de Horas</name>
+            <key>gestaohoras</key>
+            <state>stable</state> <!-- stable | unstable | beta | alpha -->
+            <logo></logo>
+            <description>
+               <short>
+                  <en>Plugin para gestão de horas trabalhadas e consumidas.</en>
+               </short>
+               <long>
+                  <en>Plugin para gestão de horas trabalhadas e consumidas.</en>
+               </long>
+            </description>
+            <homepage>https://github.com/kedson42/gestaohoras</homepage>
+            <download>https://github.com/kedson42/gestaohoras/releases</download>
+            <issues>https://github.com/kedson42/gestaohoras/issues</issues>
+            <readme>https://github.com/kedson42/gestaohoras/blob/master/README.md</readme>
+            <authors>
+               <author>Kedson Silva</author>
+            </authors>
+            <versions>
+               <version>
+                  <num>1.0</num>
+                  <compatibility>9.4</compatibility>
+                  <compatibility>9.3</compatibility>
+               </version>
+            </versions>
+            <langs>
+               <lang>pt_BR</lang>
+            </langs>
+            <license>GPL v2+</license>
+            <tags>
+               <en>
+                  <tag>horas</tag>
+               </en>
+               <en>
+                  <tag>demanda</tag>
+               </en>
+               <en>
+                  <tag>capacidade</tag>
+               </en>
+            </tags>
+            <screenshots>
+               <screenshot></screenshot>
+            </screenshots>
+         </root>
