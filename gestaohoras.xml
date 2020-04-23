@@ -5,10 +5,27 @@
             <logo></logo>
             <description>
                <short>
-                  <en>Plugin para gestão de horas trabalhadas e consumidas.</en>
+                  <en>This plugin helps you manage the amount of hours workd by and demanded to your team.</en>
+                  <pt_br>Plugin para gestão de horas trabalhadas e consumidas.</pt_br>
                </short>
                <long>
-                  <en>Plugin para gestão de horas trabalhadas e consumidas.</en>
+                  <en>
+- Set a limit of tickets a group can open;
+- Manage the group's balances;
+- Insert debits or credits in groups balances;
+- Charging groups for some task which is not registered as a ticket;
+- Plan monthly income for each group;
+- Set which ticket category will be considered by the plugin;
+- Have access to a complete balance history of each group;
+		  </en>
+		  <pt_br>
+- Estabelecer um limite de demandas por cliente;
+- Acompanhar o consumo do saldo;
+- Lançar Créditos e Débitos avulsos;
+- Visualizar um extrato completo de créditos e débitos de cada cliente;
+- Programar recargas mensais no saldo dos clientes;
+- Configurar quais serviços devem consumir do saldo.
+		  </pt_br>
                </long>
             </description>
             <homepage>https://github.com/kedson42/gestaohoras</homepage>
@@ -41,6 +58,8 @@
                </en>
             </tags>
             <screenshots>
-               <screenshot></screenshot>
+               <screenshot>https://miro.medium.com/max/1390/1*7GLq896Lpgxw-u9UpyDqPw.png</screenshot>
+		<screenshot>https://miro.medium.com/max/1400/1*O1tcD--2uPrvtzjF5-ZcKw.png</screenshot>
+		<screenshot>https://miro.medium.com/max/1400/0*wxnHWPVklXMCbgfz</screenshot>
             </screenshots>
          </root>

@@ -21,3 +21,6 @@ Para começar a usar, siga os passos abaixo:
 *  Em Administração > Gestão de Horas > Configuração de Categorias, selecione quais categorias consumirão do saldo dos grupos
 *  Em Configurar > Ações Automáticas, habilite a ação DebitoDeHoras para executar a cada 1 minuto. Ela é responsável por calcular os custos dos chamados e lançar os débitos nos grupos.
 * Em Configurar > Ações Automáticas, habilite a ação RecarregarSaldos para executar todo início de mês. Ela é responsável por recarregar os saldos mensalmente.
+
+Para mais informações, leia o artigo abaixo:
+https://link.medium.com/dIJWx5P6T5
