@@ -2,7 +2,7 @@
             <name>Gestão de Horas</name>
             <key>gestaohoras</key>
             <state>stable</state> <!-- stable | unstable | beta | alpha -->
-            <logo></logo>
+            <logo>https://raw.githubusercontent.com/kedson42/gestaohoras/master/pics/icon.png</logo>
             <description>
                <short>
                   <en>This plugin helps you manage the amount of hours workd by and demanded to your team.</en>
